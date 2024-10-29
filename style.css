@@ -432,11 +432,201 @@ blockquote cite {
 
 
 
-/* Responsive font size for small screens */
-@media (max-width: 600px) {
-    cite {
-        font-size: 0.95em;
+
+/* General Styling for Desktop */
+body, h1, h2, p {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+/* Header and Nav */
+header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem;
+}
+
+header img {
+    height: 50px;
+    margin-right: 1rem;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    margin: 0 1rem;
+    font-weight: bold;
+}
+
+nav a:hover {
+    background-color: #2E7D32;
+    padding: 0.3rem 0.7rem;
+    border-radius: 3px;
+}
+
+/* Responsive Flexbox Container */
+section {
+    padding: 2rem;
+    text-align: center;
+}
+
+.services-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 2rem;
+    padding-top: 2rem;
+}
+
+.service-card {
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 250px;
+    padding: 1.5rem;
+    text-align: center;
+    transition: transform 0.3s;
+}
+
+.service-card img {
+    width: 100%;
+    height: auto;
+    margin-bottom: 1rem;
+    border-radius: 5px;
+}
+
+.service-card:hover {
+    transform: translateY(-10px);
+}
+
+/* Media Queries */
+
+/* Tablet Screens */
+@media (max-width: 768px) {
+    nav {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .services-container {
+        flex-direction: column;
+        align-items: center;
     }
 }
+
+/* Mobile Screens */
+@media (max-width: 480px) {
+    header {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    header img {
+        height: 40px;
+    }
+
+    nav a {
+        margin: 0.5rem 0;
+        font-size: 0.9rem;
+    }
+
+    .service-card {
+        width: 100%;
+        margin: 1rem 0;
+        padding: 1rem;
+    }
+
+    /* Adjusting font sizes */
+    h1 {
+        font-size: 1.5rem;
+    }
+
+    h2 {
+        font-size: 1.25rem;
+    }
+
+    p {
+        font-size: 1rem;
+    }
+}
+/* Header and Nav Styling */
+header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem;
+    background-color: #4CAF50;
+    color: white;
+}
+
+header img {
+    height: 50px;
+    cursor: pointer;
+}
+
+nav {
+    display: flex;
+    align-items: center;
+}
+
+.menu {
+    display: flex;
+    gap: 1rem;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+nav a:hover {
+    background-color: #2E7D32;
+    padding: 0.3rem 0.7rem;
+    border-radius: 3px;
+}
+
+/* Hamburger button hidden by default on larger screens */
+.hamburger {
+    display: none;
+    font-size: 1.5rem;
+    background: none;
+    border: none;
+    color: white;
+    cursor: pointer;
+}
+
+/* Responsive Navigation */
+@media (max-width: 768px) {
+    .menu {
+        display: none; /* Hide menu by default on smaller screens */
+        flex-direction: column;
+        position: absolute;
+        top: 70px;
+        right: 0;
+        background-color: #4CAF50;
+        width: 100%;
+        text-align: center;
+        padding: 1rem;
+    }
+
+    /* Display the hamburger button */
+    .hamburger {
+        display: block;
+    }
+
+    /* Show menu when active */
+    .menu.active {
+        display: flex;
+    }
+
+    nav a {
+        margin: 1rem 0;
+    }
+}
+
 
 
