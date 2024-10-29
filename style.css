@@ -1,0 +1,442 @@
+body, h1, p {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+} 
+
+body {
+    background-color: var(--background-color);
+    color: var(--text-color);
+    font-family: Arial, sans-serif;
+    transition: background-color 0.3s, color 0.3s;
+} 
+    /* Header Styling */
+    header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        background-color: #228B22; /* Forest Green */
+        padding: 1rem 2rem;
+        color: #FAFAD2; /* Cream */
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    }
+    
+    header img {
+        height: 50px; /* Adjust the logo height as needed */
+        margin-right: 1rem; /* Space between logo and text */
+        border-radius: 5rem;
+    }
+    
+    header h1 {
+        font-size: 1.5rem; /* Adjust font size as needed */
+        flex-grow: 1; /* Make the heading take up available space */
+        text-align: center; /* Center align the heading */
+        margin: 0; /* Remove default margin */
+    }
+    
+    #toggle-dark-mode {
+        background: none; /* Remove default button background */
+        border: none; /* Remove border */
+        cursor: pointer; /* Change cursor to pointer */
+        outline: none; /* Remove outline */
+    }
+    
+    #toggle-dark-mode img {
+        width: 30px; /* Adjust icon size */
+        height: 30px; /* Adjust icon size */
+        transition: transform 0.3s; /* Add transition for hover effect */
+    }
+    
+    #toggle-dark-mode:hover img {
+        transform: scale(1.1); /* Scale icon on hover */
+    }
+    
+/* Navigation Styling */
+nav {
+    background-color: #228B22; /* Forest Green */
+    text-align: center;
+    padding: 1rem;
+}
+
+nav a {
+    color: #FAFAD2; /* Cream */
+    text-decoration: none;
+    margin: 0 1rem;
+    text-decoration-color: #20B2AA; /* Light Sea Green */
+    font-weight: bold;
+    padding: 8px;
+    transition: background-color 0.3s;
+}
+
+nav a:hover {
+    background-color: #6B8E23; /* Olive Drab */
+    padding: 0.3rem 0.7rem;
+    border-radius: 3px;
+}
+/* Section and Card Styling */
+section {
+    padding: 2rem;
+    text-align: center;
+    background-color: #f9f9f9;
+    display: flex; /* Added for flexbox */
+    flex-wrap: wrap; /* Wrap cards in a flex container */
+    justify-content: center; /* Center the cards */
+    gap: 1.5rem; /* Space between cards */
+}
+
+.card {
+    background-color: white;
+    color: #333;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    width: 280px;
+    padding: 1.5rem;
+    text-align: center;
+    transition: transform 0.3s, box-shadow 0.3s;
+    opacity: 0; /* Start hidden */
+    transform: translateY(20px); /* Start with a small translate */
+    animation: fadeIn 0.6s forwards; /* Apply the fade-in animation */
+}
+
+.card h2 {
+    font-size: 1.5rem;
+    color: #388E3C;
+    margin-bottom: 1rem;
+}
+
+.card p {
+    font-size: 1rem;
+    color: #555;
+}
+
+.card a {
+    color: #4CAF50;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.card a:hover {
+    text-decoration: underline;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
+}
+
+/* Fade-in Animation */
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Form Styling */
+form {
+    max-width: 400px;
+    margin: auto;
+    padding: 1rem;
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+} 
+
+input {
+    width: 100%;
+    padding: 0.5rem;
+    margin: 0.5rem 0;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+} 
+
+button {
+    padding: 0.7rem;
+    color: var(--button-text);
+    background-color: var(--button-background);
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+} 
+
+button:hover {
+    background-color: #0056b3;
+} 
+
+
+
+.cardgallery {
+    display: flex; /* Use flexbox for horizontal layout */
+    justify-content: center; /* Center the cards horizontally */
+    flex-wrap: wrap; /* Allow cards to wrap on smaller screens */
+    gap: 1.5rem; /* Add gap between the cards */
+    padding: 2rem;
+    background-color: #f9f9f9;
+}
+
+/* Photo Card Styling */
+.photocard {
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    transition: transform 0.3s, box-shadow 0.3s;
+    width: 250px; /* Set width for each card */
+    text-align: center;
+}
+
+.photocard img {
+    width: 100%;
+    height: 150px; /* Fixed height for uniformity */
+    object-fit: cover; /* Crop the image to fit */
+}
+
+.photocard h3 {
+    font-size: 1.5rem;
+    margin: 1rem 0 0.5rem;
+    color: #333;
+}
+
+.photocard p {
+    font-size: 1rem;
+    color: #555;
+    padding: 0 1rem;
+}
+
+.photocard button {
+    margin: 1rem 0;
+    padding: 0.5rem 1rem;
+    border: none;
+    border-radius: 5px;
+    background-color: #4CAF50;
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.photocard button:hover {
+    background-color: #388E3C;
+}
+
+.photocard:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+}
+/* General Section Styling */
+section {
+    padding: 2rem; /* Adds padding around the content */
+    margin: 1.5rem 0; /* Adds margin above and below the section */
+    background-color: #f9f9f9; /* Light background color */
+    border-radius: 8px; /* Rounded corners */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    transition: background-color 0.3s, box-shadow 0.3s; /* Smooth transitions */
+}
+
+/* Section Header Styling */
+section h2 {
+    font-size: 2rem; /* Larger font size for section headers */
+    margin-bottom: 1rem; /* Space below the header */
+    color: #388E3C; /* Dark green color for header text */
+    text-align: center; /* Center the header text */
+}
+
+/* Section Paragraph Styling */
+section p {
+    font-size: 1rem; /* Regular font size for paragraph text */
+    color: #555; /* Dark gray color for text */
+    line-height: 1.5; /* Increase line height for readability */
+    text-align: justify; /* Justify text alignment */
+}
+
+/* Section Button Styling */
+section button {
+    padding: 0.7rem 1.5rem; /* Padding for buttons */
+    background-color: #4CAF50; /* Green background for buttons */
+    color: white; /* White text color */
+    border: none; /* Remove border */
+    border-radius: 5px; /* Rounded corners */
+    cursor: pointer; /* Pointer cursor on hover */
+    transition: background-color 0.3s; /* Smooth transition for hover effect */
+    display: block; /* Make the button a block element */
+    margin: 1.5rem auto; /* Center the button and add margin */
+}
+
+/* Button Hover Effect */
+section button:hover {
+    background-color: #388E3C; /* Darker green on hover */
+}
+
+/* Media Queries for Responsiveness */
+@media (max-width: 768px) {
+    section {
+        padding: 1rem; /* Reduce padding on smaller screens */
+    }
+
+    section h2 {
+        font-size: 1.5rem; /* Smaller header font size */
+    }
+
+    section p {
+        font-size: 0.9rem; /* Smaller paragraph font size */
+    }
+
+    section button {
+        width: 100%; /* Full width buttons on small screens */
+    }
+}
+
+/* Dark Mode Styles */
+body {
+    background-color: #f9f9f9;
+    color: #333;
+}
+
+/* Dark Mode Styles */
+body.dark-mode {
+    background-color: #333;
+    color: #f9f9f9;
+}
+
+header.dark-mode, nav.dark-mode {
+    background-color: #222;
+}
+
+a.dark-mode {
+    color: #f9f9f9;
+}
+
+button#darkModeToggle {
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+#toggle-icon {
+    width: 24px;
+    height: 24px;
+}
+/* Base Styling */
+#chatbot-container {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+}
+
+/* Chatbot Button */
+#chatbot-button {
+    padding: 10px 20px;
+    font-size: 1rem;
+    color: white;
+    background-color: #4CAF50;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+#chatbot-button:hover {
+    background-color: #45A049;
+}
+
+/* Expanded Chatbot Window */
+#chatbot {
+    display: none;
+    width: 300px;
+    border-radius: 8px;
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+    padding: 16px;
+    background-color: #fff;
+    font-family: Arial, sans-serif;
+    position: fixed;
+    bottom: 70px;
+    right: 20px;
+    animation: fadeIn 0.5s ease-in-out forwards;
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+        transform: scale(0.9);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+#chatbot h3 {
+    font-size: 1.25em;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+#chat-window {
+    width: 100%;
+    height: 200px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    padding: 8px;
+    overflow-y: auto;
+    margin-bottom: 10px;
+    background-color: #f9f9f9;
+}
+
+#messages {
+    font-size: 0.9em;
+    color: #555;
+}
+
+#user-input {
+    width: calc(100% - 70px);
+    padding: 8px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 0.9em;
+    margin-right: 5px;
+}
+
+#send-btn {
+    padding: 8px 12px;
+    background-color: #28a745;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 0.9em;
+    transition: background-color 0.3s;
+}
+
+#send-btn:hover {
+    background-color: #218838;
+}
+/* Basic cite styling */
+cite {
+    font-style: italic;
+    color: white; /* Choose a color to make it stand out */
+    padding: 2px 5px;
+    
+}
+
+/* Styling within a blockquote */
+blockquote cite {
+    display: block; /* Display on a new line */
+    margin-top: 10px;
+    font-size: 0.9em;
+    color: #333; /* Darker color for better readability */
+}
+
+
+
+/* Responsive font size for small screens */
+@media (max-width: 600px) {
+    cite {
+        font-size: 0.95em;
+    }
+}
+
+
