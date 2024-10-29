@@ -580,11 +580,7 @@ nav a {
     font-weight: bold;
 }
 
-nav a:hover {
-    background-color: forestgreen;
-    padding: 0.3rem 0.7rem;
-    border-radius: 3px;
-}
+
 
 /* Hamburger button hidden by default on larger screens */
 .hamburger {
@@ -662,9 +658,7 @@ body.dark-mode footer {
 
 
 
-body.dark-mode footer a {
-    color: #f9f9f9;
-}
+
 header {
     background-color:forestgreen; /* Light green background */
     color: #FAFAD2; /* Light text color */
@@ -693,6 +687,7 @@ body.dark-mode menu {
     background-color: #333; /* Dark background for header */
     color: #f9f9f9; /* Light text color for better contrast */
 }
+
 body.dark-mode .hamburger {
     background-color: #333; /* Dark background for header */
     color: #f9f9f9; /* Light text color for better contrast */
@@ -700,13 +695,11 @@ body.dark-mode .hamburger {
 /* Show menu when active */
 body.dark-mode .menu.active {
     display: flex;
-    background-color: black;
+    background-color: black
 
 }
-/* Show menu when active */
-body.dark-mode.chatbot{
-    display: flex;
-    background-color: black;
-    color :white
 
+body.dark-mode nav:hover {
+    background-color: #333; /* Dark background for header */
+    color: #f9f9f9; /* Light text color for better contrast */
 }
