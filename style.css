@@ -688,10 +688,7 @@ body.dark-mode nav {
     background-color: #333; /* Dark background for header */
     color: #f9f9f9; /* Light text color for better contrast */
 }
-body.dark-mode.nav.card:hover {
-    background-color: #333; /* Dark background for header */
-    color: #f9f9f9; /* Light text color for better contrast */
-}
+
 body.dark-mode menu {
     background-color: #333; /* Dark background for header */
     color: #f9f9f9; /* Light text color for better contrast */
