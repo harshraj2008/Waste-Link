@@ -565,6 +565,7 @@ header img {
 nav {
     display: flex;
     align-items: center;
+    background-color: forestgreen;
 }
 
 .menu {
@@ -575,11 +576,12 @@ nav {
 nav a {
     color: white;
     text-decoration: none;
+
     font-weight: bold;
 }
 
 nav a:hover {
-    background-color: #2E7D32;
+    background-color: forestgreen;
     padding: 0.3rem 0.7rem;
     border-radius: 3px;
 }
@@ -588,7 +590,6 @@ nav a:hover {
 .hamburger {
     display: none;
     font-size: 1.5rem;
-    background: none;
     border: none;
     color: white;
     cursor: pointer;
@@ -611,11 +612,14 @@ nav a:hover {
     /* Display the hamburger button */
     .hamburger {
         display: block;
+        background-color: forestgreen;
     }
 
     /* Show menu when active */
     .menu.active {
         display: flex;
+        background-color: forestgreen;
+
     }
 
     nav a {
@@ -656,11 +660,13 @@ body.dark-mode footer {
     color: #f9f9f9;
 }
 
+
+
 body.dark-mode footer a {
     color: #f9f9f9;
 }
 header {
-    background-color: #6B8E23; /* Light green background */
+    background-color:forestgreen; /* Light green background */
     color: #FAFAD2; /* Light text color */
     padding: 10px 20px;
 }
@@ -673,4 +679,37 @@ body.dark-mode {
 body.dark-mode header {
     background-color: #333; /* Dark background for header */
     color: #f9f9f9; /* Light text color for better contrast */
+}
+
+
+
+/* Dark Mode navigation */
+body.dark-mode nav {
+    background-color: #333; /* Dark background for header */
+    color: #f9f9f9; /* Light text color for better contrast */
+}
+body.dark-mode.nav.card:hover {
+    background-color: #333; /* Dark background for header */
+    color: #f9f9f9; /* Light text color for better contrast */
+}
+body.dark-mode menu {
+    background-color: #333; /* Dark background for header */
+    color: #f9f9f9; /* Light text color for better contrast */
+}
+body.dark-mode .hamburger {
+    background-color: #333; /* Dark background for header */
+    color: #f9f9f9; /* Light text color for better contrast */
+}
+/* Show menu when active */
+body.dark-mode .menu.active {
+    display: flex;
+    background-color: black;
+
+}
+/* Show menu when active */
+body.dark-mode.chatbot{
+    display: flex;
+    background-color: black;
+    color :white
+
 }
