@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Profile - SwachhLink</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header>
+        <img src="1.png" alt="Wastelink Logo" onclick="location.href='index.html'">
+        <h1>Create Your Profile</h1>
+        <cite>~Linking waste to value</cite>
+        
+        <nav>
+            <button class="hamburger" onclick="toggleMenu()">☰</button>
+            <div class="menu">
+                <a href="index.html">Home</a>
+                <a href="contact.html">Contact Us</a>
+                <a href="wastelink_waste_assessor.html" onclick="checkLogin()">WasteLink AI Waste Assessor</a>
+                <a href="logout.html" onclick="logout()">Log Out</a>
+            </div>
+        </nav>
+    </header>
+
+    <section>
+        <form id="profile-form" onsubmit="handleProfileCreation(event);">
+            <h2>Fill in Your Details</h2>
+            <input type="text" name="name" placeholder="Full Name" required>
+            <input type="text" name="phone" placeholder="Phone Number" required>
+            <input type="text" name="address" placeholder="Address" required>
+            <textarea name="bio" placeholder="Tell us about yourself" rows="4"></textarea>
+            <button type="submit">Create Profile</button>
+        </form>
+    </section>
+
+    <footer>
+        <div class="footer-content">
+            <p>&copy; 2024 WasteLink. All Rights Reserved.</p>
+            <p>Contact Us: <a href="mailto:contact@Wastelink.com">contact@Wastelink.com</a> | Phone: +91 98765 43210</p>
+        </div>
+    </footer>
+    
+    <script src="script.js"></script>
+</body>
+</html>

@@ -5,34 +5,43 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sign Up - SwachhLink</title>
     <link rel="stylesheet" href="style.css">
+    <script src="script.js"></script>
 </head>
 <body>
 
     <header>
         <img src="1.png" alt="Wastelink Logo" onclick="location.href='index.html'">
-        <h1>Sign up </h1>
-        <cite>~Linking waste to value </cite>
-
-        <button id="darkModeToggle">
-            <img src="darkmodebg.png" alt="Toggle Dark Mode" id="toggle-icon">
-        </button>
+        <h1>Sign Up</h1>
+        <cite>~Linking waste to value</cite>
+        
+        <nav>
+            <button class="hamburger" onclick="toggleMenu()">☰</button>
+            <div class="menu">
+                <a href="index.html">Home</a>
+                <a href="contact.html">Contact Us</a>
+                <a href="login.html">Log In</a>
+            </div>
+        </nav>
     </header>
+
     <section>
-        <form action="#" method="POST">
-            <h2>Create an Account</h2>
+        <form id="signup-form" onsubmit="handleSignUp(event);">
+            <h2>Create Your Account</h2>
             <input type="text" name="username" placeholder="Username" required>
             <input type="email" name="email" placeholder="Email" required>
             <input type="password" name="password" placeholder="Password" required>
             <input type="password" name="confirm_password" placeholder="Confirm Password" required>
             <button type="submit">Sign Up</button>
+            <p><a href="login.html">Already have an account? Log In</a></p>
         </form>
     </section>
+
     <footer>
         <div class="footer-content">
-            <p> 2024 WasteLink. All Rights Reserved.</p>
+            <p>&copy; 2024 WasteLink. All Rights Reserved.</p>
             <p>Contact Us: <a href="mailto:contact@Wastelink.com">contact@Wastelink.com</a> | Phone: +91 98765 43210</p>
         </div>
     </footer>
-    <script src="script.js"></script>
+    
 </body>
 </html>

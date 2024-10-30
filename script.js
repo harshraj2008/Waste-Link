@@ -1,10 +1,11 @@
+// Function to toggle the chatbot visibility
 function toggleChatbot() {
     const chatbot = document.getElementById("chatbot");
     const isChatbotOpen = chatbot.style.display === "block";
     chatbot.style.display = isChatbotOpen ? "none" : "block";
 }
 
-// Function to handle sending messages
+// Function to handle sending messages in the chatbot
 function sendMessage() {
     const userInput = document.getElementById('user-input').value;
     const messagesDiv = document.getElementById('messages');
@@ -44,7 +45,7 @@ function getBotResponse(input) {
     }
 }
 
-// script.js
+// Script for dark mode and menu toggle
 document.addEventListener("DOMContentLoaded", () => {
     const darkModeToggle = document.getElementById("darkModeToggle");
     const toggleIcon = document.getElementById("toggle-icon");
@@ -68,26 +69,75 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 });
 
+// Function to toggle the navigation menu
 function toggleMenu() {
     const menu = document.querySelector('.menu');
     menu.classList.toggle('active');
 }
-// Check if the user is logged in when trying to access the AI Waste Estimator
-function checkLogin() {
-    if (!localStorage.getItem('isLoggedIn')) {
-        // Redirect to the login page if the user is not logged in
-        window.location.href = 'login.html';
+
+// Sample user data for demonstration (in real applications, you would use a database)
+const users = {}; // Empty object to store user credentials
+
+// Function to handle login
+function handleLogin(event) {
+    event.preventDefault();  // Prevent form submission
+    async function handleSignUp(event) {
+        event.preventDefault();  // Prevent form submission
+    
+        const username = event.target.username.value;
+        const email = event.target.email.value;
+        const password = event.target.password.value;
+        const confirmPassword = event.target.confirm_password.value;
+    
+        // Check if the passwords match
+        if (password !== confirmPassword) {
+            alert('Passwords do not match. Please try again.');
+            return;
+        }
+    
+        // Send signup request to backend
+        const response = await fetch('/signup', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({ username, email, password })
+        });
+    
+        const result = await response.json();
+        if (response.ok) {
+            // Show a pop-up message for successful signup
+            alert('Signup successful! You will now be redirected to create your profile.');
+    
+            // Store login state
+            localStorage.setItem('isLoggedIn', 'true'); 
+    
+            // Redirect to create profile page after a short delay
+            setTimeout(() => {
+                window.location.href = 'create_profile.html';  // Redirect to create profile page
+            }, 2000); // 2 seconds delay
+        } else {
+            alert(result.message);
+        }
+    }
+    
+    const email = event.target.email.value;
+    const password = event.target.password.value;
+
+    // Check if the email and password match
+    if (users[email] && users[email].password === password) {
+        // Show a pop-up message for successful login
+        alert('Login successful! Redirecting to create your profile...');
+
+        // Redirect to the profile creation page
+        localStorage.setItem('isLoggedIn', 'true'); // Store login state
+        window.location.href = 'create_profile.html';  // Replace with your profile creation page URL
     } else {
-        // User is logged in, show main section
-        document.getElementById('main-section').style.display = 'block';
+        alert('Invalid email or password. Please try again.');
     }
 }
 
-function generateWasteEstimate() {
-    const input = document.getElementById('user-input').value;
-    // Placeholder for generating waste estimate
-    alert(`Estimated waste for production details "${input}": (Placeholder for actual data)`);
-}
+// Function to handle forgotten password
 function handleForgotPassword(event) {
     event.preventDefault(); // Prevent the form from submitting normally
 
@@ -99,5 +149,55 @@ function handleForgotPassword(event) {
         window.location.href = 'login.html'; // Redirect back to login after sending the link
     } else {
         alert("Please enter a valid email.");
+    }
+}
+
+
+function checkLogin() {
+    if (!localStorage.getItem('isLoggedIn')) {
+        // Redirect to the login page if the user is not logged in
+        window.location.href = 'login.html';
+    } else {
+        // User is logged in, show main section
+        document.getElementById('main-section').style.display = 'block';
+    }
+}
+
+// Function to generate a waste estimate based on user input
+function generateWasteEstimate() {
+    const input = document.getElementById('user-input').value;
+    // Placeholder for generating waste estimate
+    alert(`Estimated waste for production details "${input}": (Placeholder for actual data)`);
+}
+async function handleSignUp(event) {
+    event.preventDefault();  // Prevent form submission
+
+    const username = event.target.username.value;
+    const email = event.target.email.value;
+    const password = event.target.password.value;
+    const confirmPassword = event.target.confirm_password.value;
+
+    // Check if the passwords match
+    if (password !== confirmPassword) {
+        alert('Passwords do not match. Please try again.');
+        return;
+    }
+
+    // Send signup request to backend
+    const response = await fetch('/signup', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({ username, email, password })
+    });
+
+    const result = await response.json();
+    if (response.ok) {
+        alert(result.message);
+        localStorage.setItem('isLoggedIn', 'true'); // Store login state
+        window.location.href = 'create_profile.html';  // Redirect to create profile page
+    } else {
+        alert(result.message);
     }
 }
