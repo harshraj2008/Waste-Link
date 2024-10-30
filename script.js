@@ -72,3 +72,32 @@ function toggleMenu() {
     const menu = document.querySelector('.menu');
     menu.classList.toggle('active');
 }
+// Check if the user is logged in when trying to access the AI Waste Estimator
+function checkLogin() {
+    if (!localStorage.getItem('isLoggedIn')) {
+        // Redirect to the login page if the user is not logged in
+        window.location.href = 'login.html';
+    } else {
+        // User is logged in, show main section
+        document.getElementById('main-section').style.display = 'block';
+    }
+}
+
+function generateWasteEstimate() {
+    const input = document.getElementById('user-input').value;
+    // Placeholder for generating waste estimate
+    alert(`Estimated waste for production details "${input}": (Placeholder for actual data)`);
+}
+function handleForgotPassword(event) {
+    event.preventDefault(); // Prevent the form from submitting normally
+
+    const email = document.querySelector('input[name="email"]').value;
+
+    // Example: Replace this with your password reset logic
+    if (email) {
+        alert(`A password reset link has been sent to ${email}.`);
+        window.location.href = 'login.html'; // Redirect back to login after sending the link
+    } else {
+        alert("Please enter a valid email.");
+    }
+}

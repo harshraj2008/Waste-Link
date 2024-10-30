@@ -8,20 +8,19 @@
 </head>
 <body>
 
-    
     <header>
         <img src="1.png" alt="Wastelink Logo" onclick="location.href='index.html'">
         <h1>Login</h1>
+        <cite>~Linking waste to value</cite>
         
         <nav>
             <button class="hamburger" onclick="toggleMenu()">☰</button>
             <div class="menu">
                 <a href="index.html">Home</a>
-                <a href="mission.html">Our Mission</a>
-                <a href="services.html">Services</a>
                 <a href="contact.html">Contact Us</a>
                 <a href="signup.html">Sign Up</a>
                 <a href="login.html">Log In</a>
+                <a href="javascript:void(0)" id="waste-link" onclick="checkLogin()">WasteLink AI Waste Assessor</a>
             </div>
         </nav>
         <button id="darkModeToggle">
@@ -29,22 +28,24 @@
         </button>
     </header>
 
-    
-    
     <section>
-        <form action="#" method="POST">
+        <form id="login-form" onsubmit="return handleLogin(event);">
             <h2>Log In to Your Account</h2>
             <input type="email" name="email" placeholder="Email" required>
             <input type="password" name="password" placeholder="Password" required>
             <button type="submit">Log In</button>
+            <p><a href="forgot_password.html">Forgot Password?</a></p> 
+            <p><a href="signup.html">New user?</a></p> 
         </form>
     </section>
+
     <footer>
         <div class="footer-content">
             <p>&copy; 2024 WasteLink. All Rights Reserved.</p>
             <p>Contact Us: <a href="mailto:contact@Wastelink.com">contact@Wastelink.com</a> | Phone: +91 98765 43210</p>
         </div>
     </footer>
+    
     <script src="script.js"></script>
 </body>
 </html>

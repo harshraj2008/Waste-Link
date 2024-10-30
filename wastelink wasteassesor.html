@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Waste Link AI Waste Estimator</title>
+    
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="dark.css" />
+</head>
+<body>
+
+<header>
+    <img src="1.png" alt="Wastelink Logo" onclick="location.href='index.html'">
+    <h1>Wastelink</h1>
+    <cite>~Linking waste to value</cite>
+    
+    <nav>
+        <button class="hamburger" onclick="toggleMenu()">☰</button>
+        <div class="menu">
+            <a href="index.html">Home</a>
+            <a href="contact.html">Contact Us</a>
+           
+            <a href="login.html">Log In</a>
+            <a href="javascript:void(0)" id="waste-link" onclick="checkLogin()">WasteLink AI Waste Estimator</a>
+        </div>
+    </nav>
+    <button id="darkModeToggle">
+        <img src="darkmodebg.png" alt="Toggle Dark Mode" id="toggle-icon">
+    </button>
+</header>
+
+<section name ="main-section", .style.display = 'block'>
+    <div>
+        <h2>AI Waste Estimator</h2>
+        <div>
+            <div>
+                <p>Welcome! Enter your production details to estimate waste output.</p>
+            </div>
+            <input type="text" id="user-input" placeholder="Enter production details..." />
+            <button id="send-btn" onclick="generateWasteEstimate()">Send</button>
+        </div>
+    </div>
+</section>
+
+<footer>
+    <div class="footer-content">
+        <p>&copy; 2024 WasteLink. All Rights Reserved.</p>
+        <p>Contact Us: <a href="mailto:contact@Wastelink.com">contact@Wastelink.com</a> | Phone: +91 98765 43210</p>
+    </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
